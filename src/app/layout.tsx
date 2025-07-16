@@ -17,6 +17,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Molecule",
   description: "Create apps and websites by chatting with AI",
+  icons: [
+    {
+      rel: "icon",
+      url: "/logo.svg",
+      type: "image/svg+xml",
+    },
+  ],
 };
 
 export default function RootLayout({
