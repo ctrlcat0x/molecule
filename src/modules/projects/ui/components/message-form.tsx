@@ -101,8 +101,8 @@ export const MessageForm = ({ projectId }: Props) => {
           <Button
             disabled={isButtonDisabled}
             className={cn(
-              "size-8 rounded-sm",
-              isButtonDisabled && "bg-muted-foreground border"
+              "size-8 rounded-md",
+              isButtonDisabled && "bg-muted-foreground"
             )}
           >
             {isPending ? (

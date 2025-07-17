@@ -9,7 +9,7 @@ import {
 import { Sandbox } from "@e2b/code-interpreter";
 import { getSandbox, lastAssistantTextMessageContent } from "./utils";
 import { z } from "zod";
-import { PROMPT } from "@/prompt";
+import { PROMPT_AGENT, PROMPT_AGENT_MODEL } from "@/prompt";
 import { prisma } from "@/lib/db";
 
 interface AgentState {
@@ -28,9 +28,9 @@ export const codeAgentFunction = inngest.createFunction(
     const codeAgent = createAgent<AgentState>({
       name: "codeAgent",
       description: "An export coding agent",
-      system: PROMPT,
+      system: PROMPT_AGENT,
       model: gemini({
-        model: "gemini-2.5-flash",
+        model: PROMPT_AGENT_MODEL,
       }),
       tools: [
         createTool({
